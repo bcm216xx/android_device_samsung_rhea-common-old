@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstlport
 
+# Glgps-Compat
+PRODUCT_PACKAGES += \
+    libglgps-compat
+
 # Init scripts
 PRODUCT_PACKAGES += \
     init.bcm2165x.usb.rc \
