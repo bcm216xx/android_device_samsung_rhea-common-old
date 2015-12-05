@@ -146,6 +146,7 @@ HTTP := chrome
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/rhea-common/ril/
 BOARD_NEEDS_SEC_RIL_WORKAROUND := true
+COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := "<font_7x16.h>"
