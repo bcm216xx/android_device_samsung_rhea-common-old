@@ -38,6 +38,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+     camera.rhea \
      libshim_camera \
      Snap \
      libxml2 
