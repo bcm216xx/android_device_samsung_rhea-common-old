@@ -40,14 +40,14 @@ public class SamsungBCMRIL extends RIL implements CommandsInterface {
 
     private static int sEnabledDataSimId = -1;
 
-    public SamsungBCMRIL(Context context, int networkMode, int cdmaSubscription) {
-        this(context, networkMode, cdmaSubscription, null);
+    public SamsungBCMRIL(Context context, int preferredNetworkType, int cdmaSubscription) {
+        this(context, preferredNetworkType, cdmaSubscription, null);
     }
 
-    public SamsungBCMRIL(Context context, int networkMode,
+    public SamsungBCMRIL(Context context, int preferredNetworkType,
             int cdmaSubscription, Integer instanceId) {
-        super(context, networkMode, cdmaSubscription, instanceId);
-        mQANElements = 5;
+        super(context, preferredNetworkType, cdmaSubscription, instanceId);
+        mQANElements = 6;
     }
 
     public void
@@ -180,7 +180,7 @@ public class SamsungBCMRIL extends RIL implements CommandsInterface {
             case RIL_REQUEST_ENTER_SIM_PUK2: ret =  responseInts(p); break;
             case RIL_REQUEST_CHANGE_SIM_PIN: ret =  responseInts(p); break;
             case RIL_REQUEST_CHANGE_SIM_PIN2: ret =  responseInts(p); break;
-            case RIL_REQUEST_ENTER_DEPERSONALIZATION_CODE: ret =  responseInts(p); break;
+            case RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION: ret =  responseInts(p); break;
             case RIL_REQUEST_GET_CURRENT_CALLS: ret =  responseCallList(p); break;
             case RIL_REQUEST_DIAL: ret =  responseVoid(p); break;
             case RIL_REQUEST_GET_IMSI: ret =  responseString(p); break;
