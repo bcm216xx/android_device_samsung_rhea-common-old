@@ -29,7 +29,11 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-     SamsungServiceMode \
+     SamsungServiceMode 
+
+# Snap
+PRODUCT_PACKAGES += \
+     Snap
 
 # EGL 
 PRODUCT_PACKAGES += \
