@@ -1,4 +1,4 @@
-type vclmk, domain;
+type vclmk, domain, mlstrustedsubject;
 type vclmk_exec, file_type, exec_type;
 
 init_daemon_domain(vclmk)
@@ -6,7 +6,8 @@ init_daemon_domain(vclmk)
 allow vclmk gpu_device:chr_file rw_file_perms;
 allow vclmk video_device:chr_file rw_file_perms;
 
-# Access app data in /proc/pid
+# Access app data in /pr/pid
+allow vclmk sysfs_lowmemorykiller:file { read getattr open };
 allow vclmk domain:dir r_dir_perms;
 allow vclmk domain:file r_file_perms;
 
