@@ -71,6 +71,9 @@ PRODUCT_PACKAGES += \
      wpa_supplicant \
      wpa_supplicant.conf
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+
 # Stlport
 PRODUCT_PACKAGES += \
     libstlport
