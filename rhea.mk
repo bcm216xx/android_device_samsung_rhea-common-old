@@ -2,116 +2,117 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/rhea-common/overlay
 
-LOCAL_PATH := device/samsung/rhea-common
+COMMON_PATH := device/samsung/rhea-common
 
 # Audio 
 USE_CUSTOM_AUDIO_POLICY := 1
 
 PRODUCT_PACKAGES += \
-	audio.a2dp.default \
-	audio.usb.default \
-	audio.r_submix.default \
-        libaudio-resampler
+     audio.a2dp.default \
+     audio.usb.default \
+     audio.r_submix.default \
+     libaudio-resampler
 
 # Power
 PRODUCT_PACKAGES += \
-        power.rhea
+     power.rhea
 
-# Media
+# Lights
 PRODUCT_PACKAGES += \
-        libstagefrighthw \
-	lights.rhea
+     lights.rhea
 
 # Charger
 PRODUCT_PACKAGES += \
-	charger_res_images
+     charger_res_images
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-	SamsungServiceMode \
+     SamsungServiceMode \
 
 # EGL 
 PRODUCT_PACKAGES += \
-    libGLES_android
+     libGLES_android
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	make_ext4fs \
-        e2fsck \
-        setup_fs
+     make_ext4fs \
+     e2fsck \
+     setup_fs
 
 # Usb accessory
 PRODUCT_PACKAGES += \
-	com.android.future.usb.accessory
+     com.android.future.usb.accessory
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
-        ebtables \
-        ethertypes
+     ebtables \
+     ethertypes
 
 # KSM
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.ksm.default=1
+     ro.ksm.default=1
 
 # Disable sending usage data
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.nocheckin=1
+     ro.config.nocheckin=1
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-        macloader \
-        dhcpcd.conf \
-        hostapd \
-        libnetcmdiface \
-        wpa_supplicant \
-        wpa_supplicant.conf
+     macloader \
+     dhcpcd.conf \
+     hostapd \
+     libnetcmdiface \
+     wpa_supplicant \
+     wpa_supplicant.conf
 
-# Init files
-PRODUCT_COPY_FILES += \
-	device/samsung/rhea-common/rootdir/init.bcm2165x.usb.rc:root/init.bcm2165x.usb.rc \
-	device/samsung/rhea-common/rootdir/init.log.rc:root/init.log.rc \
-	device/samsung/rhea-common/rootdir/ueventd.rhea_ss_corsica.rc:root/ueventd.rhea_ss_corsica.rc \
-	device/samsung/rhea-common/rootdir/init.recovery.rhea_ss_corsica.rc:root/init.recovery.rhea_ss_corsica.rc \
-        device/samsung/rhea-common/rootdir/ril_data.sh:root/ril_data.sh \
+# Init scripts
+PRODUCT_PACKAGES += \
+    init.bcm2165x.usb.rc \
+    init.bt.rc \
+    init.log.rc
+
+# Data workaroud script
+PRODUCT_PACKAGES += \
+    ril_data.sh
  
 PRODUCT_COPY_FILES += \
-	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-	device/samsung/rhea-common/configs/etc/media_codecs.xml:system/etc/media_codecs.xml \
-        device/samsung/rhea-common/configs/etc/media_profiles.xml:system/etc/media_profiles.xml \
-	device/samsung/rhea-common/configs/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    $(COMMON_PATH)/configs/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(COMMON_PATH)/configs/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    $(COMMON_PATH)/configs/etc/audio_policy.conf:system/etc/audio_policy.conf 
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/rhea-common/keylayout/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
-	device/samsung/rhea-common/keylayout/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
-	device/samsung/rhea-common/keylayout/cyttsp4_btn.kl:system/usr/keylayout/cyttsp4_btn.kl \
-	device/samsung/rhea-common/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	device/samsung/rhea-common/keylayout/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
-	device/samsung/rhea-common/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl \
-	device/samsung/rhea-common/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
+    $(COMMON_PATH)/keylayout/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
+    $(COMMON_PATH)/keylayout/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
+    $(COMMON_PATH)/keylayout/cyttsp4_btn.kl:system/usr/keylayout/cyttsp4_btn.kl \
+    $(COMMON_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(COMMON_PATH)/keylayout/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
+    $(COMMON_PATH)/keylayout/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl \
+    $(COMMON_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl 
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-	frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-	frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-	frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # Support for Browser's saved page feature. This allows
 # for pages saved on previous versions of the OS to be

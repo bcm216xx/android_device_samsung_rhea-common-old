@@ -1,5 +1,7 @@
 USE_CAMERA_STUB := true
 
+COMMON_PATH := device/samsung/rhea-common
+
 # legacy MMAP 
 BOARD_USES_LEGACY_MMAP := true
 
@@ -31,7 +33,7 @@ COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB -DRHEA_HWC
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/rhea-common/bluetooth/libbt_vndcfg.txt
+BOARD_BLUEDROID_VENDOR_CONF := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -51,10 +53,11 @@ TARGET_POWERHAL_VARIANT := rhea
 TARGET_USES_CPU_BOOST_HINT := true
 
 # Kernel
+TARGET_NO_KERNEL := false
 TARGET_KERNEL_SOURCE := kernel/samsung/rhea
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7/bin 
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
-KERNEL_TOOLCHAIN := /home/deadpool/android/kernel/tc/arm-eabi-4.7/bin
 
 # Partitions
 # This is actually 1002438656, but reducing to 0 MB to support users using repartition.
@@ -98,7 +101,7 @@ BOARD_LEGACY_NL80211_STA_EVENTS := true
 BOARD_NO_APSME_ATTR         := true
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/rhea-common/include
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Hardware rendering
 HWUI_COMPILE_FOR_PERF := true
@@ -118,7 +121,6 @@ BOARD_USE_BGRA_8888 := true
 BOARD_RIL_CLASS := ../../../device/samsung/rhea-common/ril/
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/rhea-common/rootdir/fstab.rhea
 BOARD_USE_CUSTOM_RECOVERY_FONT := "<font_7x16.h>"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/rhea-common/recovery/recovery_keys.c
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
@@ -139,11 +141,8 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.rhea
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.rhea
 
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_rhea_ss
-
 # CMHW
-BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/rhea-common/cmhw/
+BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ $(COMMON_PATH)/cmhw/
 
 # jemalloc causes a lot of random crash on free()
 MALLOC_IMPL := dlmalloc
@@ -156,7 +155,7 @@ BOARD_USES_SKTEXTBOX := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/rhea-common/sepolicy
+    $(COMMON_PATH)/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
