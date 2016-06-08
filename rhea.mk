@@ -4,6 +4,8 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/rhea-common/overlay
 
 COMMON_PATH := device/samsung/rhea-common
 
+$(call inherit-product-if-exists, vendor/samsung/rhea-common/rhea-common-vendor.mk)
+
 # Audio 
 USE_CUSTOM_AUDIO_POLICY := 1
 

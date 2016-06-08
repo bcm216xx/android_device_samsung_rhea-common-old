@@ -199,3 +199,6 @@ BOARD_SEPOLICY_UNION += \
     system_server.te \
     tvserver.te \
     vclmk.te
+
+# inherit from the proprietary version
+-include vendor/samsung/rhea-common/BoardConfigCommonVendor.mk
