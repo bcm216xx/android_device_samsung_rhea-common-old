@@ -53,6 +53,9 @@ DONT_DEXPREOPT_PREBUILTS := true
 # Skip droiddoc build to save build time
 BOARD_SKIP_ANDROID_DOC_BUILD := true
 
+# Properties (reset them here, include more in device if needed)
+TARGET_SYSTEM_PROP := device/samsung/rhea-common/system.prop
+
 # Touch screen compatibility for JB
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
