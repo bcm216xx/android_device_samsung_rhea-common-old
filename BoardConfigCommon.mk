@@ -72,7 +72,7 @@ TARGET_USES_CPU_BOOST_HINT := true
 # Kernel
 TARGET_NO_KERNEL := false
 TARGET_KERNEL_SOURCE := kernel/samsung/rhea
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7/bin 
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7/bin
 BOARD_KERNEL_BASE := 0x82000000
 BOARD_KERNEL_PAGESIZE := 4096
 
