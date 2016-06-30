@@ -131,6 +131,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungBCMRIL \
     ro.zygote.disable_gl_preload=true \
     ro.cm.hardware.cabc=/sys/class/mdnie/mdnie/cabc \
+    config.disable_atlas=true \
     ro.telephony.call_ring.multiple=0 \
     ro.telephony.call_ring=0 \
     persist.sys.force_highendgfx=true \
