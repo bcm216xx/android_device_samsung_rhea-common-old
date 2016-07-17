@@ -160,6 +160,7 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.rhea
 # CMHW
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ $(COMMON_PATH)/cmhw/
 
+# ART
 # jemalloc causes a lot of random crash on free()
 MALLOC_IMPL := dlmalloc
 
