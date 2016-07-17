@@ -132,6 +132,13 @@ COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB -DEGL_NEEDS_FNW
 USE_OPENGL_RENDERER := true
 BOARD_USE_BGRA_8888 := true
 
+# H/W acceleration 
+ENABLE_WEBGL := true
+WITH_JIT := true
+ENABLE_JSC_JIT := true
+JS_ENGINE := v8
+HTTP := chrome
+
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/rhea-common/ril/
 BOARD_NEEDS_SEC_RIL_WORKAROUND := true
