@@ -155,7 +155,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-flags=--no-watch-dog
+    dalvik.vm.dex2oat-filter=balanced \
+    dalvik.vm.dex2oat-flags=--no-watch-dog \
+    dalvik.vm.image-dex2oat-filter=speed
 
 # Use Awesomeplayer
 #PRODUCT_PROPERTY_OVERRIDES += \
