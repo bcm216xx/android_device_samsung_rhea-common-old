@@ -12,7 +12,6 @@ TARGET_BOOTLOADER_BOARD_NAME := rhea
 TARGET_BOARD_PLATFORM := rhea
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := false
 TARGET_CPU_VARIANT := cortex-a9
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
@@ -86,12 +85,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2236070912
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 #File System
-BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 #TARGET_USERIMAGES_USE_F2FS := true
-
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -152,7 +147,6 @@ COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
 BOARD_USE_CUSTOM_RECOVERY_FONT := "<font_7x16.h>"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/rhea-common/recovery/recovery_keys.c
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
@@ -175,12 +169,6 @@ BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ $(COMMON_PATH)/cmhw/
 # ART
 # jemalloc causes a lot of random crash on free()
 MALLOC_IMPL := dlmalloc
-
-# Compat
-TARGET_USES_LOGD := false
-
-# SkTextBox for libtvout
-BOARD_USES_SKTEXTBOX := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
