@@ -184,24 +184,3 @@ BOARD_USES_SKTEXTBOX := true
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     $(COMMON_PATH)/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    property_contexts \
-    service_contexts \
-    bkmgrd.te \
-    device.te \
-    geomagneticd.te \
-    gpsd.te \
-    init.te \
-    immvibed.te \
-    kernel.te \
-    macloader.te \
-    rild.te \
-    shell.te \
-    system_server.te \
-    tvserver.te \
-    vclmk.te
-
-# inherit from the proprietary version
--include vendor/samsung/rhea-common/BoardConfigCommonVendor.mk

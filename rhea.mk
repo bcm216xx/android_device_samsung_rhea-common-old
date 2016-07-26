@@ -67,6 +67,10 @@ PRODUCT_PACKAGES += \
      wpa_supplicant \
      wpa_supplicant.conf
 
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Init scripts
 PRODUCT_PACKAGES += \
     init.bcm2165x.usb.rc \
@@ -186,9 +190,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dalvik heap config
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
