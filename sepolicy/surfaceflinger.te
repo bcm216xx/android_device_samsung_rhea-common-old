@@ -1,1 +1,1 @@
-allow surfaceflinger debug_prop:property_service set
+allow surfaceflinger tvserver:binder { transfer call };

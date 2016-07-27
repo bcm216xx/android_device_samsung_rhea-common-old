@@ -6,8 +6,10 @@ init_daemon_domain(vclmk)
 allow vclmk gpu_device:chr_file rw_file_perms;
 allow vclmk video_device:chr_file rw_file_perms;
 
-# Access app data in /pr/pid
-allow vclmk sysfs_lowmemorykiller:file { read getattr open };
+# Read /sys/module/lowmemorykiller/parameters/adj
+allow vclmk sysfs_lowmemorykiller:file r_file_perms;
+
+# Access app data in /proc/pid
 allow vclmk domain:dir r_dir_perms;
 allow vclmk domain:file r_file_perms;
 
