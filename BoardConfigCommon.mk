@@ -50,6 +50,12 @@ WITH_DEXPREOPT := true
 endif
 DONT_DEXPREOPT_PREBUILTS := true
 
+# Disable compression of precompiled odex with gzip
+WITH_DEXPREOPT_COMP := false
+
+# Enable position-independent code for odex files
+WITH_DEXPREOPT_PIC := true
+
 # Skip droiddoc build to save build time
 BOARD_SKIP_ANDROID_DOC_BUILD := true
 
