@@ -40,14 +40,14 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-  ifeq ($(WITH_DEXPREOPT),)
-WITH_DEXPREOPT := true
-  endif
- endif
-endif
-DONT_DEXPREOPT_PREBUILTS := true
+#ifeq ($(HOST_OS),linux)
+#  ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+#  ifeq ($(WITH_DEXPREOPT),)
+#WITH_DEXPREOPT := true
+#  endif
+# endif
+#endif
+#DONT_DEXPREOPT_PREBUILTS := true
 
 # Skip droiddoc build to save build time
 BOARD_SKIP_ANDROID_DOC_BUILD := true
@@ -63,6 +63,7 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Non pie binary support
 TARGET_ENABLE_NON_PIE_SUPPORT := true
+TARGET_BLOBS_BYPASS_SYMBOL_ERR := true
 
 # Power
 TARGET_POWERHAL_VARIANT := rhea
@@ -123,6 +124,7 @@ BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 BOARD_EGL_NEEDS_FNW := true
+BOARD_EGL_NEEDS_HANDLE_VALUE=true
 BOARD_USES_LEGACY_ACQUIRE_WVM := true
 OVERRIDE_RS_DRIVER := libRSDriverArm_rhea.so
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS -DREFBASE_JB_MR1_COMPAT_SYMBOLS

@@ -142,7 +142,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0 \
     ro.telephony.call_ring=0 \
     persist.sys.force_highendgfx=true \
-    camera2.portability.force_api=1
+    camera2.portability.force_api=1 \
+    ro.setupwizard.mode=OPTIONAL
     
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
