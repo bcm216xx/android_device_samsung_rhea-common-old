@@ -165,6 +165,7 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.rhea
 
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.rhea
+WITH_CM_CHARGER := false
 
 # CMHW
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ $(COMMON_PATH)/cmhw/
