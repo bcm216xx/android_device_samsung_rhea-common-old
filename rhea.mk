@@ -31,6 +31,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      SamsungServiceMode 
 
+# Gello
+PRODUCT_PACKAGES += \
+     Gello
+
 # Snap
 PRODUCT_PACKAGES += \
      Snap
