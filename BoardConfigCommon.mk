@@ -49,6 +49,9 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 #endif
 #DONT_DEXPREOPT_PREBUILTS := true
 
+# Build with clang by default
+USE_CLANG_PLATFORM_BUILD := true
+
 # Skip droiddoc build to save build time
 BOARD_SKIP_ANDROID_DOC_BUILD := true
 
