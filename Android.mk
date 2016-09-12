@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter corsica nevisp ivory,$(TARGET_DEVICE)),)
+ifneq ($(filter corsica nevisp ivoryss,$(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
