@@ -347,7 +347,7 @@
                    sampleRate="48000"
                    channels="1" />
         </EncoderProfile>
-        
+
         <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="384000"
