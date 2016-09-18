@@ -69,9 +69,13 @@ PRODUCT_PACKAGES += \
 
 # Init scripts
 PRODUCT_PACKAGES += \
+    fstab.rhea \
     init.bcm2165x.usb.rc \
     init.bt.rc \
-    init.log.rc
+    init.log.rc \
+    init.recovery.rhea.rc \
+    init.rhea.rc \
+    ueventd.rhea.rc
 
 # Data workaroud script
 PRODUCT_PACKAGES += \

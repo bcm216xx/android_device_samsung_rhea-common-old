@@ -159,6 +159,13 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/rhea-common/recovery/re
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+BOARD_LDPI_RECOVERY := true
+ifeq ($(TWRP_BUILD),true)
+-include device/samsung/twrp-common/twrp.mk
+else
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.rhea
+endif
+
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_MAX_PARTITIONS := 18
