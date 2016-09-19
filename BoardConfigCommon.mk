@@ -22,6 +22,9 @@ ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
 TARGET_ARCH_LOWMEM := true
 
+# Assertions
+TARGET_BOARD_INFO_FILE := device/samsung/rhea-common/board-info.txt
+
 # Audio
 BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
