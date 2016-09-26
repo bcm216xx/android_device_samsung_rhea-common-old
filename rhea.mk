@@ -36,10 +36,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      Gello
 
-# Snap
+# Camera
 PRODUCT_PACKAGES += \
      Snap \
-     libxml2   
+     libxml2 
 
 # EGL 
 PRODUCT_PACKAGES += \
@@ -84,9 +84,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstlport
 
-# Glgps-Compat
+# Glgps-Compat|samsung_symbols
 PRODUCT_PACKAGES += \
-    libglgps-compat
+    libglgps-compat \
+    libsamsung_symbols 
 
 # Init scripts
 PRODUCT_PACKAGES += \

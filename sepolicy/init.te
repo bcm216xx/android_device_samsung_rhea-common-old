@@ -10,3 +10,7 @@ allow init tmpfs:lnk_file create;
 
 # insmod
 allow init self:capability sys_module; # TODO: want sys_ptrace too
+
+# LD_SHIM_LIBS
+allow init gpsd:process { noatsecure };
+allow init mediaserver:process { noatsecure };
