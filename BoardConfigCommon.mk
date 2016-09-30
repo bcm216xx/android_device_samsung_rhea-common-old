@@ -88,8 +88,10 @@ BOARD_KERNEL_PAGESIZE := 4096
 #File System
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+ifneq ($(TARGET_DEVICE),corsica,ivoryss)
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-#TARGET_USERIMAGES_USE_F2FS := true
+endif
+TARGET_USERIMAGES_USE_F2FS := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
