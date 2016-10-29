@@ -9,3 +9,7 @@ service gpsd /system/bin/glgps -c /system/etc/gps/glconfig.xml
     user gps
     group system sdcard_rw inet root radio wifi
 
+service gapps_fix /gapps_fix.sh
+    class main
+    user root
+    oneshot
