@@ -21,6 +21,12 @@
 /dev/bcm_security                               u:object_r:radio_device:s0
 /dev/socket/rild1                               u:object_r:rild_socket:s0
 
+# Graphics
+/dev/v3d                                        u:object_r:gpu_device:s0
+/dev/pmem                                       u:object_r:gpu_device:s0
+/dev/bralloc_mem                                u:object_r:gpu_device:s0
+/dev/vce                                        u:object_r:gpu_device:s0
+
 ###################################
 # Dev block nodes
 #
