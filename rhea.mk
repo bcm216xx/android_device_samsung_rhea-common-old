@@ -93,7 +93,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.bcm2165x.usb.rc \
     init.bt.rc \
-    init.log.rc
+    init.log.rc \
+    init.target.rc
 
 # Data workaroud script
 PRODUCT_PACKAGES += \
