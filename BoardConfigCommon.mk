@@ -41,9 +41,6 @@ BOARD_BLUEDROID_VENDOR_CONF := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-# Camera
-BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
-
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
   ifeq ($(TARGET_BUILD_VARIANT),userdebug)
@@ -158,9 +155,6 @@ TARGET_USE_CUSTOM_SECOND_LUN_NUM := 1
 
 # MTP
 BOARD_MTP_DEVICE := /dev/mtp_usb
-
-# dumpstate
-BOARD_HAL_STATIC_LIBRARIES := libdumpstate.rhea
 
 # healthd
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.rhea
