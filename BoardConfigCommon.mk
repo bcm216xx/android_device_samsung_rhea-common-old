@@ -129,10 +129,6 @@ COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB -DEGL_NEEDS_FNW
 # Legacy blobs
 USE_LEGACY_BLOBS= true
 
-# OpenGL
-USE_OPENGL_RENDERER := true
-BOARD_USE_BGRA_8888 := true
-
 # H/W acceleration 
 ENABLE_WEBGL := true
 WITH_JIT := true
