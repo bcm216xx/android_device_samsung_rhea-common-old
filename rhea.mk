@@ -32,18 +32,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      SamsungServiceMode 
 
-# Gello
-PRODUCT_PACKAGES += \
-     Gello
-
 # Camera
 PRODUCT_PACKAGES += \
-     Snap \
-     libxml2 
-
-# EGL 
-PRODUCT_PACKAGES += \
-     libGLES_android
+     Snap
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
