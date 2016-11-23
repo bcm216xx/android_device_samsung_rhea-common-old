@@ -18,7 +18,8 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     Fence.cpp \
-    GraphicBufferMapper.cpp
+    GraphicBufferMapper.cpp \
+    Omx
 
 LOCAL_SHARED_LIBRARIES := libbinder libui
 
