@@ -36,3 +36,13 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/ril_data.sh
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
+
+# Swap script
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := swap.sh
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/swap.sh
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)

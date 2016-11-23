@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
 # Data workaroud script
 PRODUCT_PACKAGES += \
     ril_data.sh
+
+# Swap script
+PRODUCT_PACKAGES += \
+    swap.sh
  
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
