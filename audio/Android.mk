@@ -7,10 +7,10 @@ LOCAL_SRC_FILES := \
 
 LOCAL_SHARED_LIBRARIES := \
     libcutils \
-    liblog \
     libutils \
-    libmedia \
+    liblog \
     libbinder \
+    libmedia \
     libaudiopolicymanagerdefault
 
 LOCAL_C_INCLUDES := \
