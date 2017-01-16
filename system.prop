@@ -1,7 +1,7 @@
-#
+
+lol
 # system.prop for rhea-common
 #
-
 # Ril
 rild.libpath=/system/lib/libbrcm_ril.so
 ro.ril.hsxpa=1
